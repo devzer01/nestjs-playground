@@ -1,0 +1,12 @@
+<div>
+    <div>Name: {{doctor.name}}</div>
+    <div>Phone: {{doctor.phone}}</div>
+</div>
+
+<h2>Speciality:</h2>
+
+<ul>
+{{#each doctor.speciality}}
+    <li>{{this.name}}</li>
+{{/each}}
+</ul>

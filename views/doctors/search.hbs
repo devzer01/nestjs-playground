@@ -1,0 +1,17 @@
+<div class="container">
+    <p class="h1">{{speciality.name}}</p>
+    <table class="table">
+        <tr>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>Location</td>
+        </tr>
+        {{#each doctors}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{{this.remark}}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</div>

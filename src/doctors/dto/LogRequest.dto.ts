@@ -1,6 +1,6 @@
 import {IsNotEmpty} from "class-validator";
 
-export class CreateDoctor {
+export class LogRequestDto {
     @IsNotEmpty()
     readonly name: string;
 

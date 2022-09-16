@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Search for specialist</h2>
+    <form method="post" action="/doctors/search-speciality">
+    <select name="speciality" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Open this select menu</option>
+        {{#each speciality}}
+            <option value="{{this.id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+
+        <button type="submit" class="btn btn-primary">Search</button>
+
+    </form>
+</div>

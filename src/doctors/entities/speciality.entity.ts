@@ -9,6 +9,6 @@ export class Speciality {
     @Column()
     name: string;
 
-    @ManyToMany(type => Doctor, doctor => doctor.name )
-    doctors: Doctor[];
+    // @ManyToMany(type => Doctor, doctor => doctor.name )
+    // doctors: Doctor[];
 }

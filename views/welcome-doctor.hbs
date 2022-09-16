@@ -1,0 +1,21 @@
+<h2>Welcome Doctor </h2>
+
+Name: {{user.name}}
+Phone: {{user.phone}}
+
+
+<h3>Today's Patient List</h3>
+<table>
+    <tr>
+    <td>>Location</td>
+    <td>Time</td>
+    <td>Patient</td>
+    </tr>
+{{#each schedules}}
+    <tr>
+        <td>{{this.clinic.name}}</td>
+        <td>{{this.start}} - ({{this.slot}}</td>
+        <td>{{this.patient.name}}</td>
+    </tr>
+{{/each}}
+</table>
