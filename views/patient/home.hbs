@@ -1,0 +1,19 @@
+<div class="container">
+    <p class="h2">Upcoming appointments</p>
+    <table class="table">
+        <tr>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Doctor</td>
+            <td>Location</td>
+        </tr>
+        {{#each schedule}}
+            <tr>
+                <td>{{this.date}}</td>
+                <td>{{this.start}}</td>
+                <td>{{this.doctor.name}}</td>
+                <td>{{this.clinic.name}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+    <h2>Register Clinic</h2>
+
+    <form method="post" action="/clinic/register">
+        <div class="mb-3">
+            <label for="nameFormControl" class="form-label">Clinic Name</label>
+            <input name="name" type="text" class="form-control" id="nameFormControl" />
+        </div>
+        <div class="mb-3">
+            <label for="phoneFormControl" class="form-label">Phone</label>
+            <input name="phone" type="text" class="form-control" id="phoneFormControl" />
+        </div>
+        <div class="mb-3">
+            <label for="phoneFormControl" class="form-label">Email</label>
+            <input name="email" type="text" class="form-control" id="phoneFormControl" />
+        </div>
+        <div class="mb-3">
+            <label for="phoneFormControl" class="form-label">Password</label>
+            <input name="password" type="text" class="form-control" id="phoneFormControl" />
+        </div>
+        <div class="form-group">
+            <label for="addressFormControlTextarea1">Clinic Address</label>
+            <textarea name="address" class="form-control" id="addressFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="areaFormControlTextarea1">Hours of operation</label>
+            <select name="open">
+                {{#each hours}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+            <select name="close">
+                {{#each hours}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="areaFormControlTextarea1">Days of Operation</label>
+
+            {{#each days}}
+                <input type="checkbox" name="days[]" value="{{this.id}}">{{this.name}}</input>
+            {{/each}}
+        </div>
+        <div class="form-group">
+            <label for="areaFormControlTextarea1">Duration of an Appointment</label>
+            <input name="duration" type="text" class="form-control" id="phoneFormControl" />
+        </div>
+        <div class="form-group" style="margin: 10px 5px">
+            <button type="submit" class="btn btn-primary mb-2">Register</button>
+        </div>
+    </form>
+    <a href="/">Home</a> <a href="/auth/login">Login</a>
+</div>

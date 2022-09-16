@@ -1,0 +1,11 @@
+<h2>Search by speciality</h2>
+<form method="post" action="/doctors/search">
+    <select name="speciality">
+{{#each specialities}}
+    <option value="{{this.id}}">{{this.name}}</option>
+{{/each}}
+</select>
+<h2>Search nearby General practitioner</h2>
+<input type="text" name="area">
+    <input type="submit" value="Search"/>
+</form>

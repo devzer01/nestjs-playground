@@ -1,0 +1,24 @@
+<div class="container">
+<a class="btn btn-primary" href="/clinic/register">Register</a>
+<table class="table">
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>Doctors</td>
+    </tr>
+{{#each clinics}}
+    <tr>
+        <td><a href="/clinic/location/{{this.id}}">{{this.id}}</a></td>
+        <td>{{this.name}}</td>
+        <td>
+            {{#each this.doctors}}
+                <div>{{this.name}}</div>
+                {{#each this.speciality}}
+                    <div>{{this.name}}</div>
+                {{/each}}
+            {{/each}}
+        </td>
+    </tr>
+{{/each}}
+</table>
+</div>

@@ -1,0 +1,32 @@
+Pick a time
+
+<table class="table">
+    <tr>
+        <td>Slot number</td>
+        <td>Clinic</td>
+        <td>Availability</td>
+        <td>Reserve</td>
+    </tr>
+    {{#each schedule}}
+        <tr>
+            <td colspan="4">{{this.clinic.clinic.name}}</td>
+        </tr>
+
+        {{#if this.available}}
+            <tr><td colspan="4">Doctor is not available today at this location</td> </tr>
+        {{else}}
+            {{#each this.slots}}
+
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.time}}</td>
+            <td>{{this.available}}</td>
+            <td>{{#if available}}
+                    <a href="/doctors/reserve/{{this.id}}/{{this.clinic.clinic.id}}/{{this.doctor.id}}">Reserve</a>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+        {{/if}}
+{{/each}}
+</table>

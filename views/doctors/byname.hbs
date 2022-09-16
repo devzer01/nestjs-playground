@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <h2 class="col-12 text-center">Doctors Directory</h2>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<div class="col-12">
+    {{#each chars}}
+            <a style="float: left; display: block" data-alpha="{{this.char}}" class="btn btn-primary"{{this.char}}">{{this.char}}</a>
+    {{/each}}
+        </div>
+{{#each chars}}
+
+<div class="col-12 align-items-center gy-5" style="float: left">
+<table class=table id="dir{{this.char}}" style="display: none">
+    <tr>
+        <td>Name</td>
+        <td>Speciality</td>
+        <td>Phone</td>
+        <td>Locations</td>
+    </tr>
+    {{#each this.docs}}
+        <tr>
+            <td><a href="/doctors/profile/{{this.id}}">{{this.name}}</a></td>
+            <td>{{this.remark}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{#each this.clinics}}
+                <div><a href="/doctors/reserve/{{../id}}">{{this.name}}</a></div>
+            {{/each}}</td>
+        </tr>
+    {{/each}}
+</table>
+</div>
+{{/each}}
+<script>
+    $(document).ready(function () {
+        let alpha = null;
+        $("a").click((function () {
+            if (alpha !== null) {
+                $("#dir" + alpha).hide();
+            }
+            alpha = $(this).data("alpha");
+            $("#dir" + alpha).show();
+        }));
+    });
+
+</script>
+</div>

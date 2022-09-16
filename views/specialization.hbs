@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Thank you for registering</h5>
+        <p class="card-text">We have emailed confirm your email address, meanwhile tell us little more about your self so we can make the experience for the patients better</p>
+        <form method="post" action="/doctors/speciality">
+            <select name="speciality">
+                {{#each specialities}}
+                    <option value="speciality-{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+            <input type="hidden" name="doctor" value="{{doctor.id}}" />
+            <button type="submit" class="btn-primary btn">Add Speciality</button>
+        </form>
+    </div>
+</div>
+

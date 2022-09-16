@@ -1,0 +1,17 @@
+<table class="table">
+    <tr>
+        <td>Doctor</td>
+        <td>Speciality</td>
+        <td>Location</td>
+        <td>Appointment</td>
+    </tr>
+
+    {{#each doctors}}
+    <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.free}}</td>
+        <td>{{this.area}}</td>
+        <td><a href="/doctors/reserve/{{this.id}}">Book</a></td>
+    </tr>
+    {{/each}}
+</table>

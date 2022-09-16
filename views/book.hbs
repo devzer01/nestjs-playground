@@ -1,0 +1,42 @@
+<h1>Health Care Management System</h1>
+
+Book an appointment
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+Date: <input type="text" name="date">
+
+Time: <input type="text" name="time">
+
+Clinic: <select name="clinic" id="clinic">
+    <option value="">Select Clinic</option>
+    {{#each clinic}}
+            <option value="{{this.id}}" />{{this.name}}</option>
+    {{/each}}
+</select>
+
+Doctor: <select name="doctor" id="doctor">
+    {{#each doctor}}
+        <option value="{{this.id}}">{{this.name}}</option>
+    {{/each}}
+</select>
+
+Slots:
+
+{{#each slots}}
+    <div><a href="/doctors/reserve/{{this.id}}/{{this.clinic}}">{{this.available}}</div>
+{{/each}}
+
+
+<script>
+    $("#clinic").change(() => {
+        $.ajax({ url: "/doctors/clinic/" + $("#clinic").val(), success: function (doctors) {
+            doctors.map((doctor) => {
+                $('<option/>')
+                .val(doctor.id)
+                .text(doctor.name)
+                .appendTo('#doctor')
+            });
+        }});
+    })
+</script>
